@@ -35,6 +35,7 @@ const skills = [
         <v-col
           v-for="{ icon, text } in skills"
           :key="icon"
+          class="d-flex"
           cols="3"
           lg="auto"
           md="3"
@@ -42,6 +43,7 @@ const skills = [
           xl="auto"
           xs="3"
           xxl="auto"
+          :class="{ 'justify-center': dp.mobile.value }"
         >
           <v-tooltip location="bottom" :text="text">
             <template #activator="{ props }">
