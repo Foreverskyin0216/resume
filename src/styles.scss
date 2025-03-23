@@ -1,0 +1,23 @@
+body {
+  background: rgba(var(--v-theme-background));
+}
+
+.contact-info {
+  text-decoration: none;
+}
+
+.contact-info:hover {
+  text-decoration: underline;
+}
+
+.line-height-150 {
+  line-height: 150%;
+}
+
+.min-height-100 {
+  min-height: 100%;
+}
+
+.link {
+  text-decoration: none;
+}

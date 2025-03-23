@@ -1,0 +1,22 @@
+# MacOS files
+.DS_Store
+
+# packages
+node_modules
+
+# build files
+dist
+
+# Test artifacts
+coverage
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+*buildinfo
+
+# Configuration
+.npmrc
+.vscode
