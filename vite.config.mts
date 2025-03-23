@@ -4,7 +4,6 @@ import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/resume/',
   css: {
     preprocessorOptions: {
       sass: { api: 'modern-compiler' }
