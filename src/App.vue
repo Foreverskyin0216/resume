@@ -38,7 +38,7 @@ theme.name.value = window.matchMedia('(prefers-color-scheme: dark)').matches ? '
 
 if (mobile.value) {
   themes.value.dark.colors.background = themes.value.dark.colors.surface
-  themes.value.light.colors.background = themes.value.dark.colors.surface
+  themes.value.light.colors.background = themes.value.light.colors.surface
 }
 
 onMounted(() => {

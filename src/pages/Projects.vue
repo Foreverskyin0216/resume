@@ -86,7 +86,7 @@ const { mobile } = useDisplay()
                         <span class="font-weight-bold text-title">Smarter Locators:</span>
                         <span class="text-subtitle">
                           Locating elements in traditional testing can be frustrating and time-consuming. PlayWord
-                          leverages AI to streamline this process, making it faster and more intuitive.
+                          leverages AI to streamline the process, making it more intuitive and easier to use.
                         </span>
                       </v-card-text>
                       <br v-if="mobile" />
@@ -94,15 +94,15 @@ const { mobile } = useDisplay()
                         <span class="font-weight-bold text-title">Faster Test Creation:</span>
                         <span class="text-subtitle">
                           Traditional testing requires writing test cases and code separately. With PlayWord, test cases
-                          serve as both documentation and executable tests, saving valuable time.
+                          act as both documentation and executable tests, saving valuable time.
                         </span>
                       </v-card-text>
                       <br v-if="mobile" />
                       <v-card-text class="text-h6" :class="{ 'px-0': mobile }">
-                        <span class="font-weight-bold text-title">Lower Maintenance:</span>
+                        <span class="font-weight-bold text-title">Lighter Maintenance:</span>
                         <span class="text-subtitle">
-                          UI changes often lead to high maintenance costs in traditional testing. PlayWord's AI-powered
-                          adaptability automatically adjusts to UI changes, reducing the need for manual updates.
+                          UI changes often lead to high maintenance costs. PlayWord's AI-powered adaptability
+                          automatically adjusts to UI changes, reducing manual update needs.
                         </span>
                       </v-card-text>
                     </v-card-text>
