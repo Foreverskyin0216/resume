@@ -106,7 +106,7 @@ const exositeTechStack = [
                         xs="3"
                         xxl="auto"
                       >
-                        <v-tooltip location="bottom" open-on-click :text="text">
+                        <v-tooltip location="bottom" :open-on-click="mobile" :open-on-hover="!mobile" :text="text">
                           <template #activator="{ props }">
                             <i class="text-h4 text-subtitle" :class="`devicon-${icon}`" v-bind="props" />
                           </template>
@@ -185,7 +185,7 @@ const exositeTechStack = [
                         xs="3"
                         xxl="auto"
                       >
-                        <v-tooltip location="bottom" open-on-click :text="text">
+                        <v-tooltip location="bottom" :open-on-click="mobile" :open-on-hover="!mobile" :text="text">
                           <template #activator="{ props }">
                             <i class="text-h4 text-subtitle" :class="`devicon-${icon}`" v-bind="props" />
                           </template>
@@ -268,7 +268,7 @@ const exositeTechStack = [
                         xs="3"
                         xxl="auto"
                       >
-                        <v-tooltip location="bottom" open-on-click :text="text">
+                        <v-tooltip location="bottom" :open-on-click="mobile" :open-on-hover="!mobile" :text="text">
                           <template #activator="{ props }">
                             <i class="text-h4 text-subtitle" :class="`devicon-${icon}`" v-bind="props" />
                           </template>

@@ -47,7 +47,7 @@ const skills = [
           xxl="auto"
           :class="{ 'justify-center': mobile }"
         >
-          <v-tooltip location="bottom" open-on-click :text="text">
+          <v-tooltip location="bottom" :open-on-click="mobile" :open-on-hover="!mobile" :text="text">
             <template #activator="{ props }">
               <i class="mx-4 text-h3 text-subtitle" :class="`devicon-${icon}`" v-bind="props" />
             </template>
