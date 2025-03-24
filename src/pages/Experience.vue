@@ -1,35 +1,45 @@
 <script lang="ts" setup>
-import { VCard, VCardText, VCardTitle, VCol, VContainer, VRow, VTimeline, VTimelineItem } from 'vuetify/components'
+import {
+  VCard,
+  VCardText,
+  VCardTitle,
+  VCol,
+  VContainer,
+  VRow,
+  VTimeline,
+  VTimelineItem,
+  VTooltip
+} from 'vuetify/components'
 import { useDisplay } from 'vuetify'
 
 const dp = useDisplay()
 
 const trendTechStack = [
-  'typescript-plain',
-  'cypressio-plain',
-  'jest-plain',
-  'postman-plain',
-  'amazonwebservices-plain-wordmark',
-  'github-original',
-  'jira-plain'
+  { icon: 'javascript-plain', text: 'JavaScript' },
+  { icon: 'typescript-plain', text: 'TypeScript' },
+  { icon: 'cypressio-plain', text: 'Cypress' },
+  { icon: 'jest-plain', text: 'Jest' },
+  { icon: 'postman-plain', text: 'Postman' },
+  { icon: 'amazonwebservices-plain-wordmark', text: 'AWS' },
+  { icon: 'github-original', text: 'GitHub' },
+  { icon: 'jira-plain', text: 'Jira' }
 ]
 
 const vangoodTechStack = [
-  'python-plain',
-  'selenium-original',
-  'pytest-plain',
-  'docker-plain',
-  'django-plain',
-  'gitlab-plain'
+  { icon: 'python-plain', text: 'Python' },
+  { icon: 'selenium-original', text: 'Selenium' },
+  { icon: 'pytest-plain', text: 'Pytest' },
+  { icon: 'docker-plain', text: 'Docker' },
+  { icon: 'django-plain', text: 'Django' },
+  { icon: 'gitlab-plain', text: 'GitLab' }
 ]
 
 const exositeTechStack = [
-  'python-plain',
-  'selenium-original',
-  'insomnia-plain',
-  'kibana-plain',
-  'github-original',
-  'jira-plain'
+  { icon: 'python-plain', text: 'Python' },
+  { icon: 'selenium-original', text: 'Selenium' },
+  { icon: 'insomnia-plain', text: 'Insomnia' },
+  { icon: 'github-original', text: 'GitHub' },
+  { icon: 'jira-plain', text: 'Jira' }
 ]
 </script>
 
@@ -92,7 +102,7 @@ const exositeTechStack = [
                         </v-card-text>
                       </v-col>
                       <v-col
-                        v-for="icon in trendTechStack"
+                        v-for="{ icon, text } in trendTechStack"
                         :key="icon"
                         cols="3"
                         lg="auto"
@@ -102,7 +112,11 @@ const exositeTechStack = [
                         xs="3"
                         xxl="auto"
                       >
-                        <i class="text-h4 text-subtitle" :class="`devicon-${icon}`" />
+                        <v-tooltip location="bottom" :text="text">
+                          <template #activator="{ props }">
+                            <i class="text-h4 text-subtitle" :class="`devicon-${icon}`" v-bind="props" />
+                          </template>
+                        </v-tooltip>
                       </v-col>
                     </v-row>
                   </v-col>
@@ -167,7 +181,7 @@ const exositeTechStack = [
                         </v-card-text>
                       </v-col>
                       <v-col
-                        v-for="icon in vangoodTechStack"
+                        v-for="{ icon, text } in vangoodTechStack"
                         :key="icon"
                         cols="3"
                         lg="auto"
@@ -177,7 +191,11 @@ const exositeTechStack = [
                         xs="3"
                         xxl="auto"
                       >
-                        <i class="text-h4 text-subtitle" :class="`devicon-${icon}`" />
+                        <v-tooltip location="bottom" :text="text">
+                          <template #activator="{ props }">
+                            <i class="text-h4 text-subtitle" :class="`devicon-${icon}`" v-bind="props" />
+                          </template>
+                        </v-tooltip>
                       </v-col>
                     </v-row>
                   </v-col>
@@ -235,7 +253,6 @@ const exositeTechStack = [
                   <v-col class="py-2" cols="12">
                     <v-card-text class="pl-0 py-0 text-h5 text-title">
                       <strong>Project:</strong>
-                      <br v-if="dp.mobile.value" />
                       Murano
                     </v-card-text>
                   </v-col>
@@ -247,7 +264,7 @@ const exositeTechStack = [
                         </v-card-text>
                       </v-col>
                       <v-col
-                        v-for="icon in exositeTechStack"
+                        v-for="{ icon, text } in exositeTechStack"
                         :key="icon"
                         cols="3"
                         lg="auto"
@@ -257,7 +274,11 @@ const exositeTechStack = [
                         xs="3"
                         xxl="auto"
                       >
-                        <i class="text-h4 text-subtitle" :class="`devicon-${icon}`" />
+                        <v-tooltip location="bottom" :text="text">
+                          <template #activator="{ props }">
+                            <i class="text-h4 text-subtitle" :class="`devicon-${icon}`" v-bind="props" />
+                          </template>
+                        </v-tooltip>
                       </v-col>
                     </v-row>
                   </v-col>

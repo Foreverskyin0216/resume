@@ -30,9 +30,7 @@ const dp = useDisplay()
               <v-container fluid>
                 <v-row>
                   <v-col class="py-0" cols="12">
-                    <v-card-text
-                      class="pl-0 py-0 text-h5 text-lg-h4 text-md-h5 text-sm-h5 text-title text-xl-h4 text-xs-h5 text-xxl-h4"
-                    >
+                    <v-card-text class="pl-0 py-0 text-h4 text-title">
                       <strong>PlayWord</strong>
                     </v-card-text>
                   </v-col>
@@ -65,38 +63,44 @@ const dp = useDisplay()
                     </v-card-text>
                   </v-col>
                   <v-col class="py-2" cols="12">
-                    <v-card-text class="d-flex pl-0 py-0 text-h5 text-title">
+                    <v-card-text
+                      class="d-flex pl-0 py-0 text-h6 text-lg-h5 text-md-h6 text-sm-h6 text-title text-xl-h5 text-xs-h6 text-xxl-h5"
+                    >
                       <strong>Repository:</strong>
                       <br v-if="dp.mobile.value" />
                       <a class="link text-subtitle" href="https://github.com/Foreverskyin0216/playword">
-                        <i class="devicon-github-plain mx-4 text-h4 text-subtitle" />
+                        <i
+                          class="devicon-github-plain mx-4 text-h5 text-lg-h4 text-md-h5 text-sm-h5 text-subtitle text-xl-h4 text-xs-h5 text-xxl-h4"
+                        />
                       </a>
                     </v-card-text>
                   </v-col>
                   <v-col cols="12">
-                    <v-card-text class="pl-0 py-0 text-h5 text-title">
+                    <v-card-text
+                      class="pl-0 py-0 text-h6 text-lg-h5 text-md-h6 text-sm-h6 text-title text-xl-h5 text-xs-h6 text-xxl-h5"
+                    >
                       <strong>Why PlayWord?</strong>
                       <v-card-text class="text-h6">
-                        <span class="font-weight-bold text-title">Enhanced Dev Experience:</span>
+                        <span class="font-weight-bold text-title">Better Dev Experience:</span>
                         <span class="text-subtitle">
-                          Locating elements in traditional testing can be frustrating and time-consuming. PlayWord uses
-                          AI to make this process faster and more intuitive.
+                          Locating elements in traditional testing can be frustrating and time-consuming. PlayWord
+                          leverages AI to streamline this process, making it faster and more intuitive.
                         </span>
                       </v-card-text>
                       <br v-if="dp.mobile.value" />
                       <v-card-text class="text-h6">
-                        <span class="font-weight-bold text-title">Boosted Dev Speed:</span>
+                        <span class="font-weight-bold text-title">Faster Test Creation:</span>
                         <span class="text-subtitle">
-                          raditional testing requires writing test cases and code separately. With PlayWord, test cases
-                          double as both documentation and executable tests, saving valuable time!
+                          Traditional testing requires writing test cases and code separately. With PlayWord, test cases
+                          serve as both documentation and executable tests, saving valuable time.
                         </span>
                       </v-card-text>
                       <br v-if="dp.mobile.value" />
                       <v-card-text class="text-h6">
-                        <span class="font-weight-bold text-title">Reduced Maintenance Cost:</span>
+                        <span class="font-weight-bold text-title">Lower Maintenance Costs:</span>
                         <span class="text-subtitle">
                           UI changes often lead to high maintenance costs in traditional testing. PlayWord's AI-powered
-                          adaptability automatically adjusts to UI changes, minimizing the need for manual updates.
+                          adaptability automatically adjusts to UI changes, reducing the need for manual updates.
                         </span>
                       </v-card-text>
                     </v-card-text>
