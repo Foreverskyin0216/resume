@@ -80,7 +80,7 @@ const dp = useDisplay()
                       class="pl-0 py-0 text-h6 text-lg-h5 text-md-h6 text-sm-h6 text-title text-xl-h5 text-xs-h6 text-xxl-h5"
                     >
                       <strong>Why PlayWord?</strong>
-                      <v-card-text class="text-h6">
+                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
                         <span class="font-weight-bold text-title">Better Dev Experience:</span>
                         <span class="text-subtitle">
                           Locating elements in traditional testing can be frustrating and time-consuming. PlayWord
@@ -88,7 +88,7 @@ const dp = useDisplay()
                         </span>
                       </v-card-text>
                       <br v-if="dp.mobile.value" />
-                      <v-card-text class="text-h6">
+                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
                         <span class="font-weight-bold text-title">Faster Test Creation:</span>
                         <span class="text-subtitle">
                           Traditional testing requires writing test cases and code separately. With PlayWord, test cases
@@ -96,7 +96,7 @@ const dp = useDisplay()
                         </span>
                       </v-card-text>
                       <br v-if="dp.mobile.value" />
-                      <v-card-text class="text-h6">
+                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
                         <span class="font-weight-bold text-title">Lower Maintenance Costs:</span>
                         <span class="text-subtitle">
                           UI changes often lead to high maintenance costs in traditional testing. PlayWord's AI-powered

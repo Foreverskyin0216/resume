@@ -123,16 +123,16 @@ const exositeTechStack = [
                   <v-col cols="12">
                     <v-card-text class="pl-0 py-0 text-h5 text-title">
                       <strong>Responsibilities:</strong>
-                      <v-card-text class="text-h6">
-                        <span class="font-weight-bold text-title">Testing Cloud Posture:</span>
+                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
+                        <span class="font-weight-bold text-title">Cloud Testing:</span>
                         <span class="text-subtitle">
-                          Testing Cloud Posture's features across various cloud platforms (AWS, Azure, and GCP),
-                          including infrastructure scanning, real-time monitoring, compliance checks, and report
+                          Performing testing on Cloud Posture's features across various cloud platforms (AWS, Azure, and
+                          GCP), including infrastructure scanning, real-time monitoring, compliance checks, and report
                           generation.
                         </span>
                       </v-card-text>
                       <br v-if="dp.mobile.value" />
-                      <v-card-text class="text-h6">
+                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
                         <span class="font-weight-bold text-title">Automated Test Development:</span>
                         <span class="text-subtitle">
                           Developing end-to-end tests for frontend and APIs using Cypress; implementing integration
@@ -140,7 +140,7 @@ const exositeTechStack = [
                         </span>
                       </v-card-text>
                       <br v-if="dp.mobile.value" />
-                      <v-card-text class="text-h6">
+                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
                         <span class="font-weight-bold text-title">Tool Development:</span>
                         <span class="text-subtitle">
                           Developing user-friendly automation scripts and tools for QA, developers, and DevOps as
@@ -202,7 +202,7 @@ const exositeTechStack = [
                   <v-col cols="12">
                     <v-card-text class="pl-0 py-0 text-h5 text-title">
                       <strong>Responsibilities:</strong>
-                      <v-card-text class="text-h6">
+                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
                         <span class="font-weight-bold text-title">Web Game Testing:</span>
                         <span class="text-subtitle">
                           Performing manual testing for web games, covering areas such as game UI, game logic, financial
@@ -210,14 +210,14 @@ const exositeTechStack = [
                         </span>
                       </v-card-text>
                       <br v-if="dp.mobile.value" />
-                      <v-card-text class="text-h6">
+                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
                         <span class="font-weight-bold text-title">Automated Test Development:</span>
                         <span class="text-subtitle">
                           Developing automated tests for game UI and backend functions using Pytest and Selenium.
                         </span>
                       </v-card-text>
                       <br v-if="dp.mobile.value" />
-                      <v-card-text class="text-h6">
+                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
                         <span class="font-weight-bold text-title">Test System Development:</span>
                         <span class="text-subtitle">
                           Developing a testing system with Django, Docker, and Redis Queue, focusing on test management
@@ -285,14 +285,14 @@ const exositeTechStack = [
                   <v-col cols="12">
                     <v-card-text class="pl-0 py-0 text-h5 text-title">
                       <strong>Responsibilities:</strong>
-                      <v-card-text class="text-h6">
+                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
                         <span class="font-weight-bold text-title">Automated Test Development:</span>
                         <span class="text-subtitle">
                           Developing automated tests for Murano using Robot Framework and Selenium.
                         </span>
                       </v-card-text>
                       <br v-if="dp.mobile.value" />
-                      <v-card-text class="text-h6">
+                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
                         <span class="font-weight-bold text-title">Test Report Analysis:</span>
                         <span class="text-subtitle">
                           Analyzing daily test reports, Kibana logs, and Jenkins execution records, and reporting any

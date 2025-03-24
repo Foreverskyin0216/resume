@@ -36,7 +36,7 @@ if (dp.mobile.value) {
 }
 
 onMounted(() => {
-  pages.push(...[about.value!, skills.value!, experience.value!, projects.value!])
+  pages.push(...[about.value!, skills.value!, projects.value!, experience.value!])
   currentPage.value = pages[0]
 
   const headerHeight = header.value!.$el.offsetHeight
@@ -94,8 +94,8 @@ const scrollToNextPage = () => {
               <v-col class="h-100">
                 <About ref="about" />
                 <Skills ref="skills" />
-                <Experience ref="experience" />
                 <Projects ref="projects" />
+                <Experience ref="experience" />
               </v-col>
             </v-row>
           </v-container>
