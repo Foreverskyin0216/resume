@@ -1,20 +1,14 @@
 <script lang="ts" setup>
 import { mdiEmail, mdiPhone } from '@mdi/js'
 import { useDisplay } from 'vuetify'
-import {
-  VAvatar,
-  VCard,
-  VCardText,
-  VCardTitle,
-  VCol,
-  VContainer,
-  VDivider,
-  VIcon,
-  VImg,
-  VRow
-} from 'vuetify/components'
+import { VAvatar } from 'vuetify/components/VAvatar'
+import { VCard, VCardText, VCardTitle } from 'vuetify/components/VCard'
+import { VDivider } from 'vuetify/components/VDivider'
+import { VCol, VContainer, VRow } from 'vuetify/components/VGrid'
+import { VIcon } from 'vuetify/components/VIcon'
+import { VImg } from 'vuetify/components/VImg'
 
-const dp = useDisplay()
+const { mobile } = useDisplay()
 </script>
 
 <template>
@@ -39,17 +33,17 @@ const dp = useDisplay()
               <v-icon size="x-small" :icon="mdiEmail" />
               foreverskyin@gmail.com
             </a>
-            <br v-if="dp.mobile.value" />
+            <br v-if="mobile" />
             <a class="contact-info text-subtitle" href="tel:+886-965-615-657">
               <v-icon size="x-small" :icon="mdiPhone" />
               +886-965-615-657
             </a>
-            <br v-if="dp.mobile.value" />
+            <br v-if="mobile" />
             <v-divider v-else class="mx-2" opacity=".7" vertical />
           </v-card-text>
           <v-card-text
             class="mx-auto px-0 text-h5 text-lg-h5 text-md-h5 text-sm-h5 text-title text-xl-h5 text-xs-h5"
-            :class="{ 'w-75': !dp.mobile.value }"
+            :class="{ 'w-75': !mobile }"
           >
             A passionate test engineer with 4+ years of experience in manual and automation testing, viewing QA as a
             craft and striving for mastery like an artisan.

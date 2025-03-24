@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import { useDisplay } from 'vuetify'
-import { VCard, VCardText, VCardTitle, VCol, VContainer, VRow, VTooltip } from 'vuetify/components'
+import { VCard, VCardText, VCardTitle } from 'vuetify/components/VCard'
+import { VCol, VContainer, VRow } from 'vuetify/components/VGrid'
+import { VTooltip } from 'vuetify/components/VTooltip'
 
-const dp = useDisplay()
+const { mobile } = useDisplay()
 
 const skills = [
   { icon: 'typescript-plain', text: 'TypeScript' },
@@ -27,7 +29,7 @@ const skills = [
         <v-col cols="12">
           <v-card-title
             class="text-h4 text-lg-h4 text-md-h4 text-sm-h4 text-title text-xl-h4 text-xs-h3 text-xxl-h4"
-            :class="{ 'text-center': dp.mobile.value }"
+            :class="{ 'text-center': mobile }"
           >
             Technical Skills
           </v-card-title>
@@ -43,9 +45,9 @@ const skills = [
           xl="auto"
           xs="3"
           xxl="auto"
-          :class="{ 'justify-center': dp.mobile.value }"
+          :class="{ 'justify-center': mobile }"
         >
-          <v-tooltip location="bottom" :text="text">
+          <v-tooltip location="bottom" open-on-click :text="text">
             <template #activator="{ props }">
               <i class="mx-4 text-h3 text-subtitle" :class="`devicon-${icon}`" v-bind="props" />
             </template>
@@ -56,7 +58,7 @@ const skills = [
         <v-col cols="12">
           <v-card-title
             class="py-0 text-h4 text-lg-h4 text-md-h4 text-sm-h4 text-title text-xl-h4 text-xs-h3"
-            :class="{ 'text-center': dp.mobile.value }"
+            :class="{ 'text-center': mobile }"
           >
             Soft Skills
           </v-card-title>
@@ -69,7 +71,7 @@ const skills = [
               expanding software development and communication skills.
             </span>
           </v-card-text>
-          <br v-if="dp.mobile.value" />
+          <br v-if="mobile" />
           <v-card-text class="text-h6 px-0">
             <span class="font-weight-bold text-title">Agile Testing Expertise:</span>
             <span class="text-subtitle">
@@ -77,7 +79,7 @@ const skills = [
               executing both manual and automated testing.
             </span>
           </v-card-text>
-          <br v-if="dp.mobile.value" />
+          <br v-if="mobile" />
           <v-card-text class="text-h6 px-0">
             <span class="font-weight-bold text-title">Cross-Cultural Teamwork:</span>
             <span class="text-subtitle">
@@ -85,7 +87,7 @@ const skills = [
               English proficiency.
             </span>
           </v-card-text>
-          <br v-if="dp.mobile.value" />
+          <br v-if="mobile" />
           <v-card-text class="text-h6 px-0">
             <span class="font-weight-bold text-title">Leadership & Motivation:</span>
             <span class="text-subtitle">

@@ -4,7 +4,11 @@ import type { CreateComponentPublicInstanceWithMixins } from 'vue'
 import { mdiChevronDown } from '@mdi/js'
 import { computed, onMounted, ref } from 'vue'
 import { useDisplay, useTheme } from 'vuetify'
-import { VApp, VBtn, VCard, VCardActions, VCardText, VCol, VContainer, VMain, VRow, VSpacer } from 'vuetify/components'
+import { VApp } from 'vuetify/components/VApp'
+import { VBtn } from 'vuetify/components/VBtn'
+import { VCard, VCardActions, VCardText } from 'vuetify/components/VCard'
+import { VCol, VContainer, VRow, VSpacer } from 'vuetify/components/VGrid'
+import { VMain } from 'vuetify/components/VMain'
 
 import ThemeSwitcher from '@/components/ThemeSwitcher.vue'
 import About from '@/pages/About.vue'
@@ -12,8 +16,8 @@ import Skills from '@/pages/Skills.vue'
 import Experience from '@/pages/Experience.vue'
 import Projects from '@/pages/Projects.vue'
 
-const dp = useDisplay()
-const theme = useTheme()
+const { mobile } = useDisplay()
+const { global: theme, themes } = useTheme()
 
 const header = ref<CreateComponentPublicInstanceWithMixins>()
 const footer = ref<CreateComponentPublicInstanceWithMixins>()
@@ -27,12 +31,14 @@ const currentPage = ref<CreateComponentPublicInstanceWithMixins>()
 const pageBottoms = [] as number[]
 const pages = [] as CreateComponentPublicInstanceWithMixins[]
 
-const surfaceHeight = computed(() => `${window.innerHeight - (dp.mobile.value ? 0 : 48)}px`)
-const surfaceWidth = computed(() => `${window.innerWidth - (dp.mobile.value ? 0 : 48)}px`)
+const surfaceHeight = computed(() => `${window.innerHeight - (mobile.value ? 0 : 48)}px`)
+const surfaceWidth = computed(() => `${window.innerWidth - (mobile.value ? 0 : 48)}px`)
 
-if (dp.mobile.value) {
-  theme.themes.value.dark.colors.background = theme.themes.value.dark.colors.surface
-  theme.themes.value.light.colors.background = theme.themes.value.light.colors.surface
+theme.name.value = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+
+if (mobile.value) {
+  themes.value.dark.colors.background = themes.value.dark.colors.surface
+  themes.value.light.colors.background = themes.value.dark.colors.surface
 }
 
 onMounted(() => {
@@ -79,10 +85,9 @@ const scrollToNextPage = () => {
         class="d-flex flex-column"
         color="surface"
         flat
+        rounded="xl"
         :height="surfaceHeight"
         :max-height="surfaceHeight"
-        :rounded="dp.mobile.value ? '' : 'xl'"
-        :tile="dp.mobile.value"
         :width="surfaceWidth"
       >
         <v-card-actions ref="header" class="justify-end pb-0">

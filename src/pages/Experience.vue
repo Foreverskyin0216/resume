@@ -1,18 +1,11 @@
 <script lang="ts" setup>
-import {
-  VCard,
-  VCardText,
-  VCardTitle,
-  VCol,
-  VContainer,
-  VRow,
-  VTimeline,
-  VTimelineItem,
-  VTooltip
-} from 'vuetify/components'
 import { useDisplay } from 'vuetify'
+import { VCard, VCardText, VCardTitle } from 'vuetify/components/VCard'
+import { VCol, VContainer, VRow } from 'vuetify/components/VGrid'
+import { VTimeline, VTimelineItem } from 'vuetify/components/VTimeline'
+import { VTooltip } from 'vuetify/components/VTooltip'
 
-const dp = useDisplay()
+const { mobile } = useDisplay()
 
 const trendTechStack = [
   { icon: 'javascript-plain', text: 'JavaScript' },
@@ -39,6 +32,7 @@ const exositeTechStack = [
   { icon: 'selenium-original', text: 'Selenium' },
   { icon: 'insomnia-plain', text: 'Insomnia' },
   { icon: 'github-original', text: 'GitHub' },
+  { icon: 'jenkins-plain', text: 'Jenkins' },
   { icon: 'jira-plain', text: 'Jira' }
 ]
 </script>
@@ -50,7 +44,7 @@ const exositeTechStack = [
         <v-col cols="12">
           <v-card-title
             class="text-h4 text-lg-h4 text-md-h4 text-sm-h4 text-title text-xl-h4 text-xs-h3"
-            :class="{ 'text-center': dp.mobile.value }"
+            :class="{ 'text-center': mobile }"
           >
             Experience
           </v-card-title>
@@ -62,7 +56,7 @@ const exositeTechStack = [
             align="start"
             density="compact"
             truncate-line="start"
-            :class="{ 'pl-6': !dp.mobile.value, 'px-0': dp.mobile.value }"
+            :class="{ 'pl-6': !mobile, 'px-0': mobile }"
           >
             <v-timeline-item dot-color="subtitle" fill-dot line-inset="0" size="x-small" width="100%">
               <v-container fluid>
@@ -77,7 +71,7 @@ const exositeTechStack = [
                   <v-col align-self="center" class="py-0" cols="12" lg="6" md="12" sm="12" xl="6" xs="12" xxl="6">
                     <v-card-text
                       class="pr-4 py-0 font-weight-bold text-h6 text-subtitle"
-                      :class="{ 'text-right': !dp.mobile.value, 'pl-0': dp.mobile.value }"
+                      :class="{ 'text-right': !mobile, 'pl-0': mobile }"
                     >
                       Nov. 2022 - Present
                     </v-card-text>
@@ -90,7 +84,7 @@ const exositeTechStack = [
                   <v-col class="py-2" cols="12">
                     <v-card-text class="pl-0 py-0 text-h5 text-title">
                       <strong>Project:</strong>
-                      <br v-if="dp.mobile.value" />
+                      <br v-if="mobile" />
                       Trend Vision One Cloud Posture
                     </v-card-text>
                   </v-col>
@@ -112,7 +106,7 @@ const exositeTechStack = [
                         xs="3"
                         xxl="auto"
                       >
-                        <v-tooltip location="bottom" :text="text">
+                        <v-tooltip location="bottom" open-on-click :text="text">
                           <template #activator="{ props }">
                             <i class="text-h4 text-subtitle" :class="`devicon-${icon}`" v-bind="props" />
                           </template>
@@ -123,7 +117,7 @@ const exositeTechStack = [
                   <v-col cols="12">
                     <v-card-text class="pl-0 py-0 text-h5 text-title">
                       <strong>Responsibilities:</strong>
-                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
+                      <v-card-text class="text-h6" :class="{ 'px-0': mobile }">
                         <span class="font-weight-bold text-title">Cloud Testing:</span>
                         <span class="text-subtitle">
                           Performing testing on Cloud Posture's features across various cloud platforms (AWS, Azure, and
@@ -131,16 +125,16 @@ const exositeTechStack = [
                           generation.
                         </span>
                       </v-card-text>
-                      <br v-if="dp.mobile.value" />
-                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
-                        <span class="font-weight-bold text-title">Automated Test Development:</span>
+                      <br v-if="mobile" />
+                      <v-card-text class="text-h6" :class="{ 'px-0': mobile }">
+                        <span class="font-weight-bold text-title">Automated Testing:</span>
                         <span class="text-subtitle">
                           Developing end-to-end tests for frontend and APIs using Cypress; implementing integration
                           tests for serverless backend services using Jest and AWS SDK.
                         </span>
                       </v-card-text>
-                      <br v-if="dp.mobile.value" />
-                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
+                      <br v-if="mobile" />
+                      <v-card-text class="text-h6" :class="{ 'px-0': mobile }">
                         <span class="font-weight-bold text-title">Tool Development:</span>
                         <span class="text-subtitle">
                           Developing user-friendly automation scripts and tools for QA, developers, and DevOps as
@@ -165,7 +159,7 @@ const exositeTechStack = [
                   <v-col align-self="center" class="py-0" cols="12" lg="6" md="12" sm="12" xl="6" xs="12" xxl="6">
                     <v-card-text
                       class="pr-4 py-0 font-weight-bold text-h6 text-subtitle"
-                      :class="{ 'text-right': !dp.mobile.value, 'pl-0': dp.mobile.value }"
+                      :class="{ 'text-right': !mobile, 'pl-0': mobile }"
                     >
                       Aug. 2020 - Sep. 2022
                     </v-card-text>
@@ -191,7 +185,7 @@ const exositeTechStack = [
                         xs="3"
                         xxl="auto"
                       >
-                        <v-tooltip location="bottom" :text="text">
+                        <v-tooltip location="bottom" open-on-click :text="text">
                           <template #activator="{ props }">
                             <i class="text-h4 text-subtitle" :class="`devicon-${icon}`" v-bind="props" />
                           </template>
@@ -202,23 +196,23 @@ const exositeTechStack = [
                   <v-col cols="12">
                     <v-card-text class="pl-0 py-0 text-h5 text-title">
                       <strong>Responsibilities:</strong>
-                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
-                        <span class="font-weight-bold text-title">Web Game Testing:</span>
+                      <v-card-text class="text-h6" :class="{ 'px-0': mobile }">
+                        <span class="font-weight-bold text-title">Game Testing:</span>
                         <span class="text-subtitle">
                           Performing manual testing for web games, covering areas such as game UI, game logic, financial
                           audits, and user permissions.
                         </span>
                       </v-card-text>
-                      <br v-if="dp.mobile.value" />
-                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
-                        <span class="font-weight-bold text-title">Automated Test Development:</span>
+                      <br v-if="mobile" />
+                      <v-card-text class="text-h6" :class="{ 'px-0': mobile }">
+                        <span class="font-weight-bold text-title">Automated Testing:</span>
                         <span class="text-subtitle">
                           Developing automated tests for game UI and backend functions using Pytest and Selenium.
                         </span>
                       </v-card-text>
-                      <br v-if="dp.mobile.value" />
-                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
-                        <span class="font-weight-bold text-title">Test System Development:</span>
+                      <br v-if="mobile" />
+                      <v-card-text class="text-h6" :class="{ 'px-0': mobile }">
+                        <span class="font-weight-bold text-title">Building a Test System:</span>
                         <span class="text-subtitle">
                           Developing a testing system with Django, Docker, and Redis Queue, focusing on test management
                           and execution, task scheduling, and result reporting.
@@ -242,7 +236,7 @@ const exositeTechStack = [
                   <v-col align-self="center" class="py-0" cols="12" lg="6" md="12" sm="12" xl="6" xs="12" xxl="6">
                     <v-card-text
                       class="pr-4 py-0 font-weight-bold text-h6 text-subtitle"
-                      :class="{ 'text-right': !dp.mobile.value, 'pl-0': dp.mobile.value }"
+                      :class="{ 'text-right': !mobile, 'pl-0': mobile }"
                     >
                       Jul. 2019 to Jun. 2020
                     </v-card-text>
@@ -274,7 +268,7 @@ const exositeTechStack = [
                         xs="3"
                         xxl="auto"
                       >
-                        <v-tooltip location="bottom" :text="text">
+                        <v-tooltip location="bottom" open-on-click :text="text">
                           <template #activator="{ props }">
                             <i class="text-h4 text-subtitle" :class="`devicon-${icon}`" v-bind="props" />
                           </template>
@@ -285,14 +279,14 @@ const exositeTechStack = [
                   <v-col cols="12">
                     <v-card-text class="pl-0 py-0 text-h5 text-title">
                       <strong>Responsibilities:</strong>
-                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
-                        <span class="font-weight-bold text-title">Automated Test Development:</span>
+                      <v-card-text class="text-h6" :class="{ 'px-0': mobile }">
+                        <span class="font-weight-bold text-title">Automated Testing:</span>
                         <span class="text-subtitle">
                           Developing automated tests for Murano using Robot Framework and Selenium.
                         </span>
                       </v-card-text>
-                      <br v-if="dp.mobile.value" />
-                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
+                      <br v-if="mobile" />
+                      <v-card-text class="text-h6" :class="{ 'px-0': mobile }">
                         <span class="font-weight-bold text-title">Test Report Analysis:</span>
                         <span class="text-subtitle">
                           Analyzing daily test reports, Kibana logs, and Jenkins execution records, and reporting any
@@ -311,7 +305,7 @@ const exositeTechStack = [
         <v-col cols="12">
           <v-card-title
             class="text-h4 text-lg-h4 text-md-h4 text-sm-h4 text-title text-xl-h4 text-xs-h3"
-            :class="{ 'text-center': dp.mobile.value }"
+            :class="{ 'text-center': mobile }"
           >
             Education
           </v-card-title>
@@ -323,7 +317,7 @@ const exositeTechStack = [
             align="start"
             density="compact"
             truncate-line="start"
-            :class="{ 'pl-6': !dp.mobile.value, 'px-0': dp.mobile.value }"
+            :class="{ 'pl-6': !mobile, 'px-0': mobile }"
           >
             <v-timeline-item dot-color="subtitle" fill-dot line-inset="0" size="x-small" width="100%">
               <v-container fluid>
@@ -338,7 +332,7 @@ const exositeTechStack = [
                   <v-col align-self="center" class="py-0" cols="12" lg="6" md="12" sm="12" xl="6" xs="12" xxl="6">
                     <v-card-text
                       class="pr-4 py-0 font-weight-bold text-h6 text-subtitle"
-                      :class="{ 'text-right': !dp.mobile.value, 'pl-0': dp.mobile.value }"
+                      :class="{ 'text-right': !mobile, 'pl-0': mobile }"
                     >
                       Sep. 2016 - Jun. 2020
                     </v-card-text>

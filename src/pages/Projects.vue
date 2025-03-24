@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import { useDisplay } from 'vuetify'
-import { VCard, VCardText, VCardTitle, VCol, VContainer, VRow, VTimeline, VTimelineItem } from 'vuetify/components'
+import { VCard, VCardText, VCardTitle } from 'vuetify/components/VCard'
+import { VCol, VContainer, VRow } from 'vuetify/components/VGrid'
+import { VTimeline, VTimelineItem } from 'vuetify/components/VTimeline'
 
-const dp = useDisplay()
+const { mobile } = useDisplay()
 </script>
 
 <template>
@@ -12,7 +14,7 @@ const dp = useDisplay()
         <v-col cols="12">
           <v-card-title
             class="text-h4 text-lg-h4 text-md-h4 text-sm-h4 text-title text-xl-h4 text-xs-h3 text-xxl-h4"
-            :class="{ 'text-center': dp.mobile.value }"
+            :class="{ 'text-center': mobile }"
           >
             Side Projects
           </v-card-title>
@@ -24,7 +26,7 @@ const dp = useDisplay()
             align="start"
             density="compact"
             truncate-line="start"
-            :class="{ 'pl-6': !dp.mobile.value, 'px-0': dp.mobile.value }"
+            :class="{ 'pl-6': !mobile, 'px-0': mobile }"
           >
             <v-timeline-item dot-color="subtitle" fill-dot line-inset="0" size="x-small" width="100%">
               <v-container fluid>
@@ -48,7 +50,7 @@ const dp = useDisplay()
                       <a class="mr-2" href="https://codecov.io/gh/Foreverskyin0216/playword">
                         <img src="https://codecov.io/gh/Foreverskyin0216/playword/graph/badge.svg" alt="codecov" />
                       </a>
-                      <a href="https://codecov.io/gh/Foreverskyin0216/playword">
+                      <a href="https://github.com/Foreverskyin0216/playword">
                         <img
                           src="https://img.shields.io/github/stars/Foreverskyin0216/playword?color=blue&style=flat"
                           alt="GitHub stars"
@@ -67,7 +69,7 @@ const dp = useDisplay()
                       class="d-flex pl-0 py-0 text-h6 text-lg-h5 text-md-h6 text-sm-h6 text-title text-xl-h5 text-xs-h6 text-xxl-h5"
                     >
                       <strong>Repository:</strong>
-                      <br v-if="dp.mobile.value" />
+                      <br v-if="mobile" />
                       <a class="link text-subtitle" href="https://github.com/Foreverskyin0216/playword">
                         <i
                           class="devicon-github-plain mx-4 text-h5 text-lg-h4 text-md-h5 text-sm-h5 text-subtitle text-xl-h4 text-xs-h5 text-xxl-h4"
@@ -80,24 +82,24 @@ const dp = useDisplay()
                       class="pl-0 py-0 text-h6 text-lg-h5 text-md-h6 text-sm-h6 text-title text-xl-h5 text-xs-h6 text-xxl-h5"
                     >
                       <strong>Why PlayWord?</strong>
-                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
-                        <span class="font-weight-bold text-title">Better Dev Experience:</span>
+                      <v-card-text class="text-h6" :class="{ 'px-0': mobile }">
+                        <span class="font-weight-bold text-title">Smarter Locators:</span>
                         <span class="text-subtitle">
                           Locating elements in traditional testing can be frustrating and time-consuming. PlayWord
                           leverages AI to streamline this process, making it faster and more intuitive.
                         </span>
                       </v-card-text>
-                      <br v-if="dp.mobile.value" />
-                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
+                      <br v-if="mobile" />
+                      <v-card-text class="text-h6" :class="{ 'px-0': mobile }">
                         <span class="font-weight-bold text-title">Faster Test Creation:</span>
                         <span class="text-subtitle">
                           Traditional testing requires writing test cases and code separately. With PlayWord, test cases
                           serve as both documentation and executable tests, saving valuable time.
                         </span>
                       </v-card-text>
-                      <br v-if="dp.mobile.value" />
-                      <v-card-text class="text-h6" :class="{ 'px-0': dp.mobile.value }">
-                        <span class="font-weight-bold text-title">Lower Maintenance Costs:</span>
+                      <br v-if="mobile" />
+                      <v-card-text class="text-h6" :class="{ 'px-0': mobile }">
+                        <span class="font-weight-bold text-title">Lower Maintenance:</span>
                         <span class="text-subtitle">
                           UI changes often lead to high maintenance costs in traditional testing. PlayWord's AI-powered
                           adaptability automatically adjusts to UI changes, reducing the need for manual updates.

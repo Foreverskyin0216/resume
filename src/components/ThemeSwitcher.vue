@@ -1,39 +1,25 @@
 <script lang="ts" setup>
 import { mdiWeatherNight, mdiWhiteBalanceSunny } from '@mdi/js'
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 import { useTheme } from 'vuetify'
-import { VBtn, VIcon } from 'vuetify/components'
+import { VBtn } from 'vuetify/components/VBtn'
+import { VIcon } from 'vuetify/components/VIcon'
+import { VScrollXTransition } from 'vuetify/components/transitions'
 
-const theme = useTheme()
+const { current, global: theme } = useTheme()
 
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)')
-theme.global.name.value = prefersDark.matches ? 'dark' : 'light'
+const darkTheme = ref(current.value.dark)
+const lightTheme = ref(!current.value.dark)
+const transitioning = ref(false)
 
-prefersDark.addEventListener('change', (event) => {
-  if (event.matches) {
-    if (!theme.global.current.value.dark) {
-      theme.global.name.value = 'dark'
-      lightTheme.value = false
-    } else {
-      transitioning.value = false
-    }
-  } else {
-    if (theme.global.current.value.dark) {
-      theme.global.name.value = 'light'
-      darkTheme.value = false
-    } else {
-      transitioning.value = false
-    }
-  }
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+  if (event.matches) lightTheme.value = false
+  else if (current.value.dark) darkTheme.value = false
+
+  theme.name.value = current.value.dark ? 'light' : 'dark'
+
   transitioning.value = true
 })
-
-const mounted = ref(false)
-const transitioning = ref(false)
-const darkTheme = ref(theme.global.current.value.dark)
-const lightTheme = ref(!theme.global.current.value.dark)
-
-onMounted(() => (mounted.value = true))
 
 const enableDarkTheme = () => {
   darkTheme.value = true
@@ -46,28 +32,24 @@ const enableLightTheme = () => {
 }
 
 const toggleTheme = () => {
-  if (theme.global.current.value.dark) {
+  if (current.value.dark) {
     darkTheme.value = false
-    theme.global.name.value = 'light'
+    theme.name.value = 'light'
   } else {
     lightTheme.value = false
-    theme.global.name.value = 'dark'
+    theme.name.value = 'dark'
   }
   transitioning.value = true
 }
 </script>
 
 <template>
-  <v-btn icon variant="plain" :disabled="transitioning" @click="toggleTheme">
-    <transition name="scroll-x-transition" @after-leave="enableLightTheme">
-      <div v-show="darkTheme">
-        <v-icon :icon="mdiWeatherNight" />
-      </div>
-    </transition>
-    <transition name="scroll-x-transition" @after-leave="enableDarkTheme">
-      <div v-show="lightTheme">
-        <v-icon :icon="mdiWhiteBalanceSunny" />
-      </div>
-    </transition>
+  <v-btn icon variant="plain" :disabled="transitioning" :ripple="false" @click="toggleTheme">
+    <v-scroll-x-transition @after-leave="enableLightTheme">
+      <v-icon v-show="darkTheme" :icon="mdiWeatherNight" />
+    </v-scroll-x-transition>
+    <v-scroll-x-transition @after-leave="enableDarkTheme">
+      <v-icon v-show="lightTheme" :icon="mdiWhiteBalanceSunny" />
+    </v-scroll-x-transition>
   </v-btn>
 </template>

@@ -8,7 +8,6 @@ export default createVuetify({
   directives: { Scroll },
   icons: { aliases, defaultSet: 'mdi', sets: { mdi } },
   theme: {
-    defaultTheme: 'light',
     themes: {
       light: {
         colors: {
