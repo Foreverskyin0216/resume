@@ -30,7 +30,7 @@ const dp = useDisplay()
           <v-card-text
             class="pb-0 text-center text-h4 text-lg-h4 text-title text-md-h3 text-sm-h4 text-xl-h4 text-xs-h5 text-xxl-h4"
           >
-            Hello, I am Steve Lu
+            Hi, I am Steve Lu
           </v-card-text>
           <v-card-text
             class="pt-0 text-center text-h6 text-lg-h6 text-md-h5 text-sm-h6 text-subtitle text-xl-h6 text-xs-h6"
